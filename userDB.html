@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>UserDB</title>
+</head>
+<body>
+    <nav>
+        <p class="nav--heading">UserDB</p>
+        <form class="sign--in" onsubmit="return  false">
+            <input type="text" placeholder="UID" class="input--box input--uid"/>
+            <button class="btn signin--btn">Sign-In with UID</button>
+            <p class="nav--text">OR</p>
+            <input type="text" placeholder="Choose UID" class="input--box input--newuid"/>
+            <button class="btn register--btn">Register for Account</button>
+            <button class="btn signout--btn">Sign-Out</button>
+        </form>
+    </nav>
+    <main class="user--content hidden">
+        <h1 class="uid--heading">User ID</h1>
+        <form class="data--tools" onsubmit="return false">
+            <input type="text" placeholder="Data to add" class="input--data">
+            <button class="btn dataadd--btn">Add Data</button>
+            <input type="number" placeholder="Index of Data To remove" class="input--dataid">
+            <button class="btn datadel--btn">Delete Data</button>
+        </form>
+        <div class="database--div">
+            <p class="database">testing the database section</p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
