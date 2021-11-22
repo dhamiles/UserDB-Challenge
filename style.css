@@ -1,76 +1,99 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
 body {
-    font-family: sans-serif;
-    color: rgb(49, 49, 49);
-    background-color: white;
-    height: 100vh;
-  }
+  font-family: sans-serif;
+  color: rgb(49, 49, 49);
+  background-color: white;
+  height: 100vh;
+}
 
 nav {
-    display: flex;
-    background-color: gray;
-    padding: 1rem 3rem;
-    margin: 0;
-    justify-content: space-between;
-    align-items: center;
-  }
+  display: flex;
+  background-color: gray;
+  padding: 1rem 3rem;
+  margin: 0;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .nav--heading {
-    font-size: 1.9rem;
-    font-weight: 500;
-  }
+  font-size: 1.9rem;
+  font-weight: 500;
+}
 
 .nav--text {
-    font-size: 1rem;
-    font-weight: 500;
-    margin: auto;
-    margin-right: 1rem;
-  }
+  font-size: 1rem;
+  font-weight: 500;
+  margin: auto;
+  margin-right: 1rem;
+}
 
 .uid--heading {
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
+  padding-bottom: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
 
 .sign--in {
-    display: flex;
-  }
+  display: flex;
+}
 
 .input--box {
-    border: none;
-    padding: 0.5rem 0.5rem;
-    font-size: 0.75rem;
-    font-family: inherit;
-    text-align: center;
-    width: 12rem;
-    border-radius: 10rem;
-    margin-right: 1rem;
-    color: inherit;
-    border: 1px solid white;
-    transition: all 0.3s;
-  }
+  border: none;
+  padding: 0.5rem 0.5rem;
+  font-size: 0.75rem;
+  font-family: inherit;
+  text-align: center;
+  width: 12rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  color: inherit;
+  border: 1px solid white;
+  transition: all 0.3s;
+}
 
 .btn {
-    border: black;
-    background: darkgrey;
-    font-size: 0.75rem;
-    padding:  0.5rem;
-    color: inherit;
-    cursor: pointer;
-    border-radius: 10rem;
-    margin-right: 1rem;
-  }
+  border: black;
+  background: darkgrey;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 10rem;
+  margin-right: 1rem;
+}
 
 .signout--btn {
-    background:rgb(48, 46, 46);
-    color: white;
+  background: rgb(48, 46, 46);
+  color: white;
+}
+
+.user--content {
+  margin-top: 2rem;
+  text-align: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.database--div {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  border-style: solid;
+  border-width: 4px;
+  border-color: black;
+  border-radius: 0.75rem;
+}
+
+.database {
+  margin-top: 0;
+  overflow-wrap: break-word;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
