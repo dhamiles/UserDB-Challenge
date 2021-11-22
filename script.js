@@ -1,5 +1,6 @@
+//const { json } = require("stream/consumers");
+
 ws = new WebSocket("ws://localhost:8082");
-//import user from "helper.js"
 
 // All code the for the log-in/registration process
 
@@ -8,8 +9,10 @@ const signInBtn = document.querySelector(".signin--btn");
 const registerBtn = document.querySelector(".register--btn");
 const signOutBtn = document.querySelector(".signout--btn");
 const uidInput = document.querySelector(".input--uid");
+const newUidInput = document.querySelector(".input--newuid")
 const userContent = document.querySelector(".user--content");
 const uidHeading = document.querySelector(".uid--heading");
+const dataDisplay = document.querySelector(".database");
 
 
 // Assign General State variables
@@ -28,6 +31,8 @@ signInBtn.addEventListener("click", function () {
             data: uidInput.value
         }
         ws.send(JSON.stringify(message));
+    }  else {
+        uidInput.value = '';
     }
 })
 
@@ -51,10 +56,26 @@ signOutBtn.addEventListener("click", function () {
         currentData = null;
         signedIn = false;
         userContent.classList.add("hidden")
-    }
+    } 
 })
 
-// ADD event listener for account creation that sends info to server to create new user
+// Functionality when the register button is cliccked
+registerBtn.addEventListener("click", function () {
+    // Assign new uid input box value  to a variable for clarity
+    let newUid = newUidInput.value; 
+    // Only function if no user currently signed in
+    if (!signedIn && newUid) {
+
+        // let the message to send to server be the following
+        let message = {
+            event: "NEW-USER",
+            data: newUid
+        }
+        ws.send(JSON.stringify(message));
+    }
+    // clear the input box
+    newUidInput.value = '';
+})
 
 // Create an event listener that listens for messages from the server
 ws.addEventListener("message", message => {
@@ -79,9 +100,19 @@ ws.addEventListener("message", message => {
             userContent.classList.remove("hidden");
             // add the uid to the heading
             uidHeading.textContent = `User ID: ${m.data.uid}`;
+            // Display the current user data
+            dataDisplay.textContent = currentData;
 
             // log current user data for debugging
             console.log(currentUser,currentData,signedIn);
+        }
+
+    // If the event is  a newuser-response     
+    } else if (m.event === "NEWUSER-REPLY") {
+        if (m.data) {
+            alert('Account successfully created\nSign in with your new UID');
+        } else {
+            alert('Either UID is invalid or already in use,  try a different UID');
         }
     }
 })
